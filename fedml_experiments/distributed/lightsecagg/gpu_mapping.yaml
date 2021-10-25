@@ -1,0 +1,24 @@
+# Please check "GPU_MAPPING.md" to see how to define the topology
+# You can define a cluster containing multiple GPUs within multiple machines by defining `gpu_mapping.yaml` as follows:
+
+# config_cluster0:
+#     host_name_node0: [num_of_processes_on_GPU0, num_of_processes_on_GPU1, num_of_processes_on_GPU2, num_of_processes_on_GPU3, ..., num_of_processes_on_GPU_n]
+#     host_name_node1: [num_of_processes_on_GPU0, num_of_processes_on_GPU1, num_of_processes_on_GPU2, num_of_processes_on_GPU3, ..., num_of_processes_on_GPU_n]
+#     host_name_node_m: [num_of_processes_on_GPU0, num_of_processes_on_GPU1, num_of_processes_on_GPU2, num_of_processes_on_GPU3, ..., num_of_processes_on_GPU_n]
+
+
+# this is used for 10 clients and 1 server training within a single machine which has 4 GPUs
+mapping_default:
+    ChaoyangHe-GPU-RTX2080Tix4: [3, 3, 3, 2]
+
+# this is used for 4 clients and 1 server training within a single machine which has 4 GPUs
+mapping_config1_5:
+    host1: [2, 1, 1, 1]
+
+# this is used for 10 clients and 1 server training within a single machine which has 4 GPUs
+mapping_config2_11:
+    host1: [3, 3, 3, 2]
+
+# this is used for 10 clients and 1 server training within a single machine which has 8 GPUs
+mapping_lightsecagg:
+    host1: [2, 1, 1, 1, 1, 1, 1, 1]
